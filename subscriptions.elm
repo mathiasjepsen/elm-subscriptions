@@ -43,7 +43,7 @@ subscriptions model =
 view : Model -> Html Msg
 view model =
   let
-    progress = toString <| toFloat (round (Time.inMilliseconds model) % 5000) / 5000 * 100
+    progress = toString <| toFloat (inMilliseconds model) % 5000 / 5000 * 100
   in
     svg [ viewBox "0 0 120 120", width "500px" ]
       [ rect [x "10", y "10", width "100", height "6", rx "2", ry "2" ] []
